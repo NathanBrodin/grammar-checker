@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Grammar Checker</title>
+        <title>Grammar Checker | Nathan Brodin</title>
         <meta name="description" content="Nathan Brodin's Grammar checker" />
         <meta name="keywords" content="grammar checker" />
         <meta name="author" content="Nathan Brodin" />
