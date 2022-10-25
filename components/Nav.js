@@ -15,7 +15,7 @@ export default function Nav() {
 
   return (
     <div className="w-screen z-50 fixed top-0 bg-white dark:bg-neutral-800 shadow-sm">
-        <div className="flex justify-between px-8 py-3 border-b border-b-neutral-300 dark:border-b-neutral-600">
+        <div className="grid grid-cols-3 justify-between px-8 py-3 border-b border-b-neutral-300 dark:border-b-neutral-600">
             <div>
                 <Link href={"https://nathanbrodin.com"} passHref={true}>
                     <a target="_blank" className='flex items-center'>
@@ -24,10 +24,10 @@ export default function Nav() {
                     </a>
                 </Link>
             </div>
-            <div className='flex items-center'>
+            <div className='flex items-center place-self-center'>
                 <h1 className='font-bold text-lg'>Grammar Checker</h1>
             </div>
-            <div>
+            <div className='place-self-end'>
                 <label className='group'>  
                     <input className='hidden' type="checkbox" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}/> 
                     <Light className={`${theme === 'light' ? 'hidden' : 'visible'} fill-current w-8 h-8 rounded-full bg-neutral-900 text-neutral-400 p-1 group-hover:text-teal-800`}/>
