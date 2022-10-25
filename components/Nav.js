@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react'
 
 export default function Nav() {
     const [ mounted, setMounted ] = useState()
-    const { theme, setTheme } = useTheme()
+    const { theme, setTheme, resolvedTheme } = useTheme()
+
 
     useEffect(() => setMounted(true), [])
 
@@ -30,8 +31,8 @@ export default function Nav() {
             <div className='place-self-end'>
                 <label className='group'>  
                     <input className='hidden' type="checkbox" onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}/> 
-                    <Light className={`${theme === 'light' ? 'hidden' : 'visible'} fill-current w-8 h-8 rounded-full bg-neutral-900 text-neutral-400 p-1 group-hover:text-teal-800`}/>
-                    <Dark className={`${theme === 'dark' ? 'hidden' : 'visible'} fill-current w-8 h-8 rounded-full bg-gray-100 text-gray-600 p-1 group-hover:text-teal-800 group-hover:bg-gray-200`}/>
+                    <Light className={`${resolvedTheme === 'light' ? 'hidden' : 'visible'} fill-current w-8 h-8 rounded-full bg-neutral-900 text-neutral-400 p-1 group-hover:text-teal-800`}/>
+                    <Dark className={`${resolvedTheme === 'dark' ? 'hidden' : 'visible'} fill-current w-8 h-8 rounded-full bg-gray-100 text-gray-600 p-1 group-hover:text-teal-800 group-hover:bg-gray-200`}/>
                 </label>
             </div>
         </div>

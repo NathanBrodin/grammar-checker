@@ -43,7 +43,7 @@ export default function Main() {
                     <p className={`${words !== 0 ? 'hidden' : 'visible'} self-center`}>Write something amazing!</p>
                   </div>
                   <div className="place-self-center self-center">
-                    <button type="button" disabled={!words} className={`${words !== 0 ? 'bg-teal-800' : 'bg-neutral-700 text-neutral-400'} rounded-full px-3 py-1.5 font-bold`}>Fix All Errors</button>
+                    <button type="button" disabled={!words} className={`${words !== 0 ? 'bg-teal-800 hover:bg-teal-900' : 'bg-neutral-200 dark:bg-neutral-700 text-neutral-400'} rounded-full px-3 py-1.5 font-bold`}>Fix All Errors</button>
                   </div>
                   <div className="flex  place-self-end self-center">
                     <CopyToClipboard text={text} onCopy={handleCopy}>
