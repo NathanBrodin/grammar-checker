@@ -3,13 +3,19 @@ import { useTheme } from 'next-themes'
 import Logo from '../public/logo.svg'
 import Light from '../public/icons/light.svg'
 import Dark from '../public/icons/dark.svg'
+import { useEffect, useState } from 'react'
 
 export default function Nav() {
+    const [ mounted, setMounted ] = useState()
     const { theme, setTheme } = useTheme()
+
+    useEffect(() => setMounted(true), [])
+
+    if (!mounted) { return null }
 
   return (
     <div className="w-screen z-50 fixed top-0 bg-white dark:bg-neutral-800 shadow-sm">
-        <div className="flex justify-between px-8 py-4 border-b border-b-neutral-300 dark:border-b-neutral-600">
+        <div className="flex justify-between px-8 py-3 border-b border-b-neutral-300 dark:border-b-neutral-600">
             <div>
                 <Link href={"https://nathanbrodin.com"} passHref={true}>
                     <a target="_blank" className='flex items-center'>
@@ -18,8 +24,8 @@ export default function Nav() {
                     </a>
                 </Link>
             </div>
-            <div>
-                <h1 className='font-bold text-base'>Grammar Checker</h1>
+            <div className='flex items-center'>
+                <h1 className='font-bold text-lg'>Grammar Checker</h1>
             </div>
             <div>
                 <label className='group'>  
