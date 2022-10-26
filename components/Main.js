@@ -8,7 +8,6 @@ export default function Main() {
   const [text, setText] = useState("");
   const [previousText, setPreviousText] = useState("");
   const [words, setWords] = useState(0);
-  const [ textErrors, setTextErrors ] = useState(0);
   const [ message, setMessage ] = useState("");
   const [ loading, setLoading ] = useState(false);
   const [ fixed, setFixed ] = useState(false);
@@ -93,8 +92,7 @@ export default function Main() {
                 <div className="grid grid-cols-3 justify-between w-full ">
                   <div className="flex gap-4  place-self-start self-center">
                     <p className="self-center whitespace-nowrap">{words} Words</p>
-                    <span className={`${textErrors > 1 ? 'bg-red-500' : words !== 0 ? 'bg-green-500' : 'bg-neutral-500'} w-1.5 h-1.5 rounded-full  self-center invisible sm:visible`}/>
-                    <p className={`${words < 1 ? 'hidden' : 'invisible sm:visible'} self-center`}>{textErrors} Errors</p>
+                    <span className={`${words !== 0 ? 'bg-green-500' : 'bg-neutral-500'} w-1.5 h-1.5 rounded-full  self-center invisible sm:visible`}/>
                     <p className={`${words !== 0 ? 'hidden' : 'invisible sm:visible'} self-center`}>Write something amazing!</p>
                   </div>
                   <div className="place-self-center self-center">
