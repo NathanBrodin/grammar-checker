@@ -4,7 +4,7 @@ It is fully functional and can be used to check the grammar and spelling of your
 If the correction triggers an error, it means I haven't paid my OpenAi bills. Send me money and I'll fix it :)
 
 ## How to use
-1. Navigate to [grammar-checker.vercel.app].(https://grammar-checker.vercel.app/)
+1. Navigate to [grammar-checker.vercel.app](https://grammar-checker.vercel.app/).
 2. Enter your text.
 3. Click on the "Fix All Errors" button.
 4. Wait for the results to appear.
