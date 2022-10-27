@@ -63,6 +63,7 @@ export default function Main() {
         })
         
         const data = await res.json();   
+        console.log(data);
         setText(data.text); 
 
         setMessage("Fixed all grammar errors.");
