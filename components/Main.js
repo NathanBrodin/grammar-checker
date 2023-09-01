@@ -63,16 +63,28 @@ export default function Main() {
         })
         
         const data = await res.json();   
-        console.log(data);
-        setText(data.text); 
+        const message = data.text;
+        let i = -1;
 
-        setMessage("Fixed all grammar errors.");
-        setFixed(false);
-        setLoading(false);
+      setText("");
 
-        setTimeout(() => {
-          setMessage("");
-        }, 4000);
+      const typingEffect = setInterval(() => {
+        setText((prevText) => prevText + message[i]);
+        i++;
+
+        if (i === message.length - 1) {
+          clearInterval(typingEffect);
+
+          setMessage("Fixed all grammar errors.");
+          setWords(countWords(text));
+          setFixed(false);
+          setLoading(false);
+
+          setTimeout(() => {
+            setMessage("");
+          }, 4000);
+        }
+      }, 50);
       }
       fetchData();
 
